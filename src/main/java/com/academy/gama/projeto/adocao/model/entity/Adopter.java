@@ -1,4 +1,4 @@
-package com.academy.gama.projeto.adocao.model;
+package com.academy.gama.projeto.adocao.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

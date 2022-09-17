@@ -1,4 +1,4 @@
-package com.academy.gama.projeto.adocao.model;
+package com.academy.gama.projeto.adocao.model.entity;
 
 import com.academy.gama.projeto.adocao.model.enums.PetSize;
 import com.academy.gama.projeto.adocao.model.enums.PetType;
@@ -10,19 +10,16 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pet")
+@Table(name = "preferencias")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pet {
+public class Preferences {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_pet")
+    @Column(name = "id_preferencias")
     private Long id;
-
-    @Column(name = "nome")
-    private String name;
 
     @Column(name = "tipo")
     private PetType petType;
@@ -38,4 +35,8 @@ public class Pet {
 
     @Column(name = "idade")
     private Integer age;
+
+    @ManyToOne
+    @JoinColumn(name = "id_adotante")
+    private Adopter adopter;
 }
